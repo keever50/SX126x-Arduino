@@ -3345,7 +3345,7 @@ LoRaMacStatus_t LoRaMacMlmeRequest(MlmeReq_t *mlmeRequest)
 
 		altDr.NbTrials = JoinRequestTrials + 1;
 
-		LoRaMacParams.ChannelsDatarate = RegionAlternateDr(LoRaMacRegion, &altDr);
+		LoRaMacParams.ChannelsDatarate = HACK_JOIN_DR; //RegionAlternateDr(LoRaMacRegion, &altDr); HACK force to high SF at join
 
 		IsLoRaMacNetworkJoined = JOIN_ONGOING;
 

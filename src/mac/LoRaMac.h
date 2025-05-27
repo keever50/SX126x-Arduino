@@ -1,3 +1,5 @@
+#define HACK_JOIN_DR 0
+
 /*!
  * \file      LoRaMac.h
  *

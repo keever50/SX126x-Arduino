@@ -1997,7 +1997,9 @@ static LoRaMacStatus_t ScheduleTx(void)
 	}
 
 	// Update Backoff
-	CalculateBackOff(LastTxChannel);
+#if HACK_OVERRIDE_BACKOFF == 0
+  CalculateBackOff(LastTxChannel); // Hack, allow overriding of backoff
+#endif
 
 	nextChan.AggrTimeOff = AggregatedTimeOff;
 	nextChan.Datarate = LoRaMacParams.ChannelsDatarate;

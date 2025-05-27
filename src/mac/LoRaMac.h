@@ -1,4 +1,5 @@
 #define HACK_JOIN_DR 0
+#define HACK_OVERRIDE_BACKOFF 1
 
 /*!
  * \file      LoRaMac.h

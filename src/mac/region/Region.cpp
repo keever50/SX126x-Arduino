@@ -1694,26 +1694,28 @@ uint8_t RegionDlChannelReq(LoRaMacRegion_t region, DlChannelReqParams_t *dlChann
 
 int8_t RegionAlternateDr(LoRaMacRegion_t region, AlternateDrParams_t *alternateDr)
 {
-	switch (region)
-	{
-		AS923_ALTERNATE_DR();
-		AU915_ALTERNATE_DR();
-		CN470_ALTERNATE_DR();
-		CN779_ALTERNATE_DR();
-		EU433_ALTERNATE_DR();
-		EU868_ALTERNATE_DR();
-		KR920_ALTERNATE_DR();
-		IN865_ALTERNATE_DR();
-		US915_ALTERNATE_DR();
-		AS923_2_ALTERNATE_DR();
-		AS923_3_ALTERNATE_DR();
-		AS923_4_ALTERNATE_DR();
-		RU864_ALTERNATE_DR();
-	default:
-	{
-		return 0;
-	}
-	}
+  // HACK always return fixed datarate
+  return HACK_JOIN_DR;
+	// switch (region)
+	// {
+	// 	AS923_ALTERNATE_DR();
+	// 	AU915_ALTERNATE_DR();
+	// 	CN470_ALTERNATE_DR();
+	// 	CN779_ALTERNATE_DR();
+	// 	EU433_ALTERNATE_DR();
+	// 	EU868_ALTERNATE_DR();
+	// 	KR920_ALTERNATE_DR();
+	// 	IN865_ALTERNATE_DR();
+	// 	US915_ALTERNATE_DR();
+	// 	AS923_2_ALTERNATE_DR();
+	// 	AS923_3_ALTERNATE_DR();
+	// 	AS923_4_ALTERNATE_DR();
+	// 	RU864_ALTERNATE_DR();
+	// default:
+	// {
+	// 	return 0;
+	// }
+	// }
 }
 
 void RegionCalcBackOff(LoRaMacRegion_t region, CalcBackOffParams_t *calcBackOff)

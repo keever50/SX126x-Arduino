@@ -1999,6 +1999,8 @@ static LoRaMacStatus_t ScheduleTx(void)
 	// Update Backoff
 #if HACK_OVERRIDE_BACKOFF == 0
   CalculateBackOff(LastTxChannel); // Hack, allow overriding of backoff
+#else
+  AggregatedTimeOff = 1;
 #endif
 
 	nextChan.AggrTimeOff = AggregatedTimeOff;
